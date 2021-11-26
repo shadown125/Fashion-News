@@ -1,0 +1,17 @@
+<div class="container{{ .reverse }}">
+    <div class="content">
+        <div class="key-headline">
+            {{ if .topHeadline }}
+                <span>{{ .topHeadline }}</span>
+            {{ end }}
+            <h1 class="headline h2">{{ .title }}</h1>
+        </div>
+        <p>
+            {{ .description }}
+        </p>
+        <button class="button" type="button">SHOW MORE</button>
+    </div>
+    <div class="image-wrapper">
+        <img src="{{ .image }}" alt="Opening Picture">
+    </div>
+</div>

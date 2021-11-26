@@ -1,8 +1,8 @@
 {{ $description := "Lorem ipsum dolor sit amet, consectetur adipiscing elit nullam nunc justo sagittis suscipit ultrices, sit amet, consectetur adipiscing elit nullam nunc justo sagittis suscipit ultrices" }}
-{{ $image := "/fashionNewsStaging.jpg"}}
+{{ $image := "/fashionNewsTeaser.jpg"}}
 
-<header class="staging">
+<section class="staging">
     <div class="wrapper">
-        {{ partial "sections/teaser.html" (dict "context" . "reverse" "" "title" "Summer Wear" "topHeadline" "FASHION NEWS" "description" $description "image" $image) }}
+        {{ partial "sections/teaser.html" (dict "context" . "reverse" " is-reverse" "title" "New Look Wear" "topHeadline" "" "description" $description "image" $image) }}
     </div>
-</header>
+</section>

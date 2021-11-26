@@ -5,6 +5,7 @@
     --padding: #{susanoo.rem-calc(60)};
     --bottom-padding: calc(var(--padding) * 5);
 
+    padding: unset;
     .container {
         position: relative;
         background: {
@@ -18,6 +19,19 @@
         }
         @include susanoo.breakpoint(large-m) {
             padding: var(--padding);
+        }
+        &.is-reverse {
+            margin: {
+                bottom: calc(var(--bottom-padding) * 1.1);
+            }
+            .content {
+                margin: {
+                    left: auto;
+                }
+            }
+            .image-wrapper {
+                left: calc(var(--padding) / 2);
+            }
         }
     }
     .content {
