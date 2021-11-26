@@ -1,0 +1,66 @@
+@use '../susanoo';
+@use '../lists';
+@use 'variables';
+
+.latest-products {
+    --background-color: #{variables.$background-color};
+
+    @media only screen and (max-width: 640px) {
+        background: {
+            color: var(--background-color);
+        }
+    }
+    overflow: hidden;
+    .gallery {
+        @include lists.reset-list();
+        display: grid;
+        grid: {
+            template: {
+                columns: repeat(auto-fit, minmax(min(#{susanoo.rem-calc(360)}, 100%), 1fr));
+            }
+            gap: susanoo.rem-calc(60) susanoo.rem-calc(300);
+        }
+    }
+    li {
+        &:nth-child(odd) {
+            @include susanoo.breakpoint(medium) {
+                margin: {
+                    top: susanoo.rem-calc(120);
+                }
+            }
+        }
+    }
+    .image-wrapper {
+        position: relative;
+        &::before {
+            content: "";
+            position: absolute;
+            top: susanoo.rem-calc(-80);
+            right: susanoo.rem-calc(-80);
+            width: 80%;
+            height: 100%;
+            background: {
+                color: var(--background-color);
+            }
+            z-index: -1;
+        }
+    }
+    img {
+        width: 100%;
+        height: 100%;
+        max: {
+            height: susanoo.rem-calc(500);
+        }
+        object-fit: cover;
+    }
+    .description {
+        display: block;
+        color: variables.$description-color;
+        font: {
+            size: susanoo.rem-calc(26);
+        }
+        margin: {
+            top: susanoo.rem-calc(24);
+        }
+    }
+}
