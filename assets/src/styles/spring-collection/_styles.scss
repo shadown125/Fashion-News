@@ -1,0 +1,77 @@
+@use '../susanoo';
+
+.spring-collection {
+    --background-color: #f6f6f6;
+
+    background: {
+        color: var(--background-color);
+    }
+    padding: {
+        top: susanoo.rem-calc(320);
+        bottom: susanoo.rem-calc(240);
+    }
+    @include susanoo.breakpoint(large-m) {
+        background: {
+            color: unset;
+        }
+    }
+    .container {
+        --padding: #{susanoo.rem-calc(100)};
+
+        display: flex;
+        flex: {
+            direction: column;
+        }
+        position: relative;
+        @include susanoo.breakpoint(large-m) {
+            padding: var(--padding);
+            background: {
+                color: var(--background-color);
+            }
+        }
+    }
+    .content {
+        @include susanoo.breakpoint(large-m) {
+            max: {
+                width: 60%;
+            }
+            margin: {
+                left: auto;
+            }
+        }
+    }
+    .image-wrapper {
+        margin: {
+            bottom: susanoo.rem-calc(40);
+        }
+        order: -1;
+        @include susanoo.breakpoint(large-m) {
+            position: absolute;
+            top: -30%;
+            left: 0;
+            width: 35%;
+            order: unset;
+            margin: {
+                bottom: unset;
+            }
+        }
+    }
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        max: {
+            height: susanoo.rem-calc(540);
+        }
+        @include susanoo.breakpoint(large-m) {
+            max: {
+                height: susanoo.rem-calc(740);
+            }
+        }
+    }
+    .button {
+        margin: {
+            top: susanoo.rem-calc(40);
+        }
+    }
+}
