@@ -13,6 +13,11 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+        @media only screen and (max-width: 640px) {
+            flex: {
+                direction: column;
+            }
+        }
     }
     .social-list {
         @include lists.reset-list();
@@ -21,6 +26,11 @@
             wrap: wrap;
         }
         gap: susanoo.rem-calc(20) 0;
+        @media only screen and (max-width: 640px) {
+            margin: {
+                top: susanoo.rem-calc(24);
+            }
+        }
         span {
             position: absolute;
             top: 0;
