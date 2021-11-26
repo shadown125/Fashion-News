@@ -1,0 +1,58 @@
+@use '../susanoo';
+@use 'variables';
+
+.staging {
+    --padding: #{susanoo.rem-calc(60)};
+    --bottom-padding: calc(var(--padding) * 5);
+
+    .container {
+        position: relative;
+        background: {
+            color: variables.$background-color;
+        }
+        padding: {
+            top: var(--padding);
+            right: var(--padding);
+            bottom: var(--bottom-padding);
+            left: var(--padding);
+        }
+        @include susanoo.breakpoint(large-m) {
+            padding: var(--padding);
+        }
+    }
+    .content {
+        @include susanoo.breakpoint(large-m) {
+            padding: {
+                top: susanoo.rem-calc(100);
+            }
+            max: {
+                width: 50%;
+            }
+        }
+    }
+    .image-wrapper {
+        --height: #{susanoo.rem-calc(700)};
+
+        position: absolute;
+        object-fit: cover;
+        height: calc(var(--height) / 1.5);
+        width: 80%;
+        right: calc(var(--padding) / 2);
+        bottom: calc(var(--height) / -1.3 + var(--bottom-padding));
+        @include susanoo.breakpoint(large-m) {
+            width: 40%;
+            top: var(--padding);
+            height: var(--height);
+        }
+    }
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .button {
+        margin: {
+            top: susanoo.rem-calc(24);
+        }
+    }
+}
