@@ -1,0 +1,40 @@
+@use '../susanoo';
+
+button {
+    border: unset;
+    background: {
+        color: unset;
+    }
+    cursor: pointer;
+}
+
+.button {
+    position: relative;
+    border: black 1px solid;
+    padding: susanoo.rem-calc(10) susanoo.rem-calc(20);
+    overflow: hidden;
+    &:hover {
+        &::before {
+            transform: scale(1);
+            opacity: 1;
+        }
+    }
+    &::before {
+        content: "SHOW MORE";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background: {
+            color: #1c1d25;
+        }
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transform: scale(5);
+        opacity: 0;
+        transition: opacity 0.2s linear, transform 0.2s linear;
+    }
+}
