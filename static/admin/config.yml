@@ -1,0 +1,6 @@
+backend:
+  name: github
+  repo: shadown125/Fashion-News
+
+media_folder: "static/images/uploads"
+public_folder: "/images/uploads"
